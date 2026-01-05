@@ -1,0 +1,126 @@
+:root {
+  --colorBG: #710000;
+  --colorPrimary: rgb(152, 141, 255);
+  --colorSecondary: rgb(202, 202, 202);
+
+  --fontSizePrimary: 2.6vw;
+  --fontSizeSecondary: 1.5vw;
+  --fontSizeTertiary: 1vw;
+  --fontSizeMobilePrimary: 6vw;
+  --fontSizeMobileSecondary: 3vw;
+  --fontSizeMobileTertiary: 3vw;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+body {
+  background-image: url("media/bgimg.png");
+  /* animation: bgAnim 5s linear infinite alternate; */
+  font-family: monospace;
+  margin: 0;
+}
+
+/* @keyframes bgAnim {
+  50% {
+    background-position: center;
+  }
+  100% {
+    background-position: center;
+  }
+} */
+
+h1 {
+  font-size: var(--fontSizePrimary);
+  color: var(--colorPrimary);
+  text-align: center;
+  margin: auto;
+}
+p {
+  font-size: var(--fontSizeTertiary);
+}
+
+.middleSection {
+  border-radius: 10px;
+  padding: 25px;
+  width: 70vw;
+  margin: -100px auto;
+  background-color: var(--colorBG);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  overflow: hidden;
+  z-index: 1000;
+  top: 50%;
+}
+
+.navbar a {
+  color: var(--colorPrimary);
+  text-align: center;
+  text-decoration: none;
+  font-size: var(--fontSizeSecondary);
+  border: 10px solid;
+  border-image: url("media/bgimg.png") 25 repeat;
+  margin: 10px 20px;
+  padding: 5px;
+}
+
+.navbar a:hover {
+  background-image: url("media/bgimg.png");
+}
+
+.navbar-right {
+  display: flex;
+  flex-direction: column;
+}
+.navbar-left {
+  display: flex;
+  flex-direction: column;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  h1 {
+    font-size: var(--fontSizeMobilePrimary);
+  }
+  p {
+    font-size: var(--fontSizeMobileTertiary);
+  }
+  .middleSection {
+    margin: 0px auto;
+  }
+  .navbar {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    overflow: hidden;
+    z-index: 1000;
+    top: 0;
+    background-image: url("media/bgimg.png");
+  }
+
+  .navbar a {
+    font-size: var(--fontSizeMobileSecondary);
+    border: 10px solid;
+    border-image: url("media/bgimg.png") 25 repeat;
+    margin: 10px 20px;
+    padding: 5px;
+  }
+
+  .navbar a:hover {
+    background-image: url("media/bgimg.png");
+  }
+
+  .navbar-right {
+    display: flex;
+    flex-direction: row;
+  }
+  .navbar-left {
+    display: flex;
+    flex-direction: row;
+  }
+}
