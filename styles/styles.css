@@ -16,7 +16,7 @@ html {
 }
 
 body {
-  background-image: url("media/bgimg.png");
+  background-image: url("../media/bgimg.png");
   /* animation: bgAnim 5s linear infinite alternate; */
   font-family: monospace;
   margin: 0;
@@ -64,13 +64,13 @@ p {
   text-decoration: none;
   font-size: var(--fontSizeSecondary);
   border: 10px solid;
-  border-image: url("media/bgimg.png") 25 repeat;
+  border-image: url("../media/bgimg.png") 25 repeat;
   margin: 10px 20px;
   padding: 5px;
 }
 
 .navbar a:hover {
-  background-image: url("media/bgimg.png");
+  background-image: url("../media/bgimg.png");
 }
 
 .navbar-right {
@@ -97,30 +97,18 @@ p {
     display: flex;
     justify-content: center;
     position: sticky;
-    overflow: hidden;
-    z-index: 1000;
     top: 0;
-    background-image: url("media/bgimg.png");
+    background-image: url("../media/bgimg.png");
   }
 
   .navbar a {
     font-size: var(--fontSizeMobileSecondary);
-    border: 10px solid;
-    border-image: url("media/bgimg.png") 25 repeat;
-    margin: 10px 20px;
-    padding: 5px;
-  }
-
-  .navbar a:hover {
-    background-image: url("media/bgimg.png");
   }
 
   .navbar-right {
-    display: flex;
     flex-direction: row;
   }
   .navbar-left {
-    display: flex;
     flex-direction: row;
   }
 }
