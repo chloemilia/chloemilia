@@ -128,6 +128,13 @@ p {
   flex-direction: column;
 }
 
+.entry {
+  border: 10px solid;
+  padding: 0px 10px;
+  margin: 50px 10px;
+  border-image: url("../media/bgimg.png") 25 repeat;
+}
+
 /* MOBILE */
 @media (max-width: 900px) {
   h1 {
@@ -144,7 +151,6 @@ p {
     justify-content: center;
     position: sticky;
     top: 0;
-
     background-image: url("../media/bgimg.png");
   }
 
