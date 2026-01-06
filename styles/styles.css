@@ -1,35 +1,80 @@
 :root {
   --colorBG: #710000;
+  --colorBG2: #500000;
   --colorPrimary: rgb(152, 141, 255);
   --colorSecondary: rgb(202, 202, 202);
 
   --fontSizePrimary: 2.6vw;
   --fontSizeSecondary: 1.5vw;
   --fontSizeTertiary: 1vw;
+  --fontSizeButton: 0.8vw;
   --fontSizeMobilePrimary: 6vw;
   --fontSizeMobileSecondary: 3vw;
-  --fontSizeMobileTertiary: 3vw;
+  --fontSizeMobileTertiary: 2vw;
+  --fontSizeMobileButton: 1.7vw;
+
+  /* --x: 0px;
+  --y: 0px; */
 }
 
 html {
   scrollbar-width: none;
 }
 
-body {
+.bg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  bottom: 0;
+  z-index: -1;
+  width: 200%;
+  height: 200%;
   background-image: url("../media/bgimg.png");
-  /* animation: bgAnim 5s linear infinite alternate; */
+  /* transform: translate(var(--x), var(--y)); */
+}
+
+body {
+  margin: 0;
   font-family: monospace;
   margin: 0;
 }
 
-/* @keyframes bgAnim {
-  50% {
-    background-position: center;
+.page {
+  background-image: url("../media/bgimg.png");
+  animation: moveBgDown 1s linear infinite,
+    moveBgLeftRight 3s ease-in-out infinite alternate;
+}
+
+@keyframes moveBgDown {
+  from {
+    background-position-y: 0vh;
   }
-  100% {
-    background-position: center;
+  to {
+    background-position-y: 256px;
   }
-} */
+}
+@keyframes moveBgLeftRight {
+  from {
+    background-position-x: 0vw;
+  }
+  to {
+    background-position-x: -10vw;
+  }
+}
+
+#toggleAnim:checked ~ .page {
+  animation-play-state: paused;
+}
+.toggle-btn {
+  font-size: var(--fontSizeButton);
+  text-align: center;
+  padding: 8px 8px;
+  background: var(--colorBG2);
+  color: var(--colorPrimary);
+  cursor: pointer;
+  user-select: none;
+  border-radius: 4px;
+}
 
 .middleSection {
   border-radius: 10px;
@@ -99,11 +144,13 @@ p {
     justify-content: center;
     position: sticky;
     top: 0;
+
     background-image: url("../media/bgimg.png");
   }
 
   .navbar a {
     font-size: var(--fontSizeMobileSecondary);
+    margin: 1vw 2vw;
   }
 
   .navbar-right {
@@ -111,5 +158,18 @@ p {
   }
   .navbar-left {
     flex-direction: row;
+  }
+
+  .toggle-btn {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    font-size: var(--fontSizeMobileButton);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page {
+    animation: none;
   }
 }
