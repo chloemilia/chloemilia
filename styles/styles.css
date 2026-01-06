@@ -14,7 +14,7 @@
   --fontSizeMobilePrimary: 6vw;
   --fontSizeMobileSecondary: 3vw;
   --fontSizeMobileTertiary: 2vw;
-  --fontSizeMobileButton: 1.7vw;
+  --fontSizeMobileButton: 2vw;
 
   --backgroundImgLia: url("../media/bgimglia.png");
   --backgroundImgChloe: url("../media/bgimgchloe.png");
@@ -154,7 +154,6 @@ p {
   margin: 10px 0px;
   flex-direction: column;
   text-align: center;
-  padding: 1vw;
 }
 
 /* MOBILE */
@@ -166,11 +165,11 @@ p {
     font-size: var(--fontSizeMobileTertiary);
   }
   body {
-    margin: 20px 0px;
+    margin: 0px, 0px;
   }
 
   .page {
-    min-height: 100vh;
+    min-height: 110vh;
   }
 
   .middleSection {
@@ -200,6 +199,10 @@ p {
     font-size: var(--fontSizeMobileButton);
     justify-content: space-evenly;
     margin-bottom: 10px;
+  }
+
+  .toggle-btn {
+    font-size: var(--fontSizeMobileButton);
   }
 }
 

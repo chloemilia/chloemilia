@@ -31,8 +31,8 @@
 }
 
 .entry img {
-  padding: 20px 10px;
-  height: 20vw;
+  padding: 0;
+  width: 100%;
 }
 
 #layoutSongs:checked ~ .page .musicEntryWrapper .entry .listSongs {
