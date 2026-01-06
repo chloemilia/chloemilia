@@ -1,0 +1,47 @@
+.musicEntryWrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.musicEntry {
+  min-width: 25%;
+  padding: 1vw;
+  padding-top: 0;
+  justify-content: center;
+  text-align: center;
+}
+
+.toggle-btn {
+  transform: none;
+  display: flex;
+  justify-content: center;
+}
+
+.listSongs {
+  display: none;
+  flex-direction: column;
+}
+.listAlbums {
+  display: none;
+  flex-direction: column;
+}
+.listArtists {
+  display: none;
+  flex-direction: column;
+}
+
+.entry img {
+  padding: 20px 10px;
+  height: 20vw;
+}
+
+#layoutSongs:checked ~ .page .musicEntryWrapper .entry .listSongs {
+  display: flex;
+}
+
+#layoutAlbums:checked ~ .page .musicEntryWrapper .entry .listAlbums {
+  display: flex;
+}
+#layoutArtists:checked ~ .page .musicEntryWrapper .entry .listArtists {
+  display: flex;
+}

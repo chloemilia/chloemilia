@@ -30,12 +30,13 @@ html {
 }
 
 body {
-  margin: 0;
+  background-image: var(--backgroundImgCurrent);
+  margin: -10vh auto;
   font-family: monospace;
-  margin: 0;
 }
 
 .page {
+  min-height: 110vh;
   background-image: var(--backgroundImgCurrent);
   animation: moveBgDown 1s linear infinite,
     moveBgLeftRight 3s ease-in-out infinite alternate;
@@ -60,26 +61,32 @@ body {
 
 .buttons {
   display: flex;
-  font-size: var(--fontSizeButton);
   justify-content: space-between;
 }
 
 .toggle-btn {
+  cursor: pointer;
   text-align: center;
+  font-size: var(--fontSizeButton);
   padding: 8px 8px;
-  background: var(--colorBGButtonCurrent);
+  border: 8px solid;
+  border-image: var(--backgroundImgCurrent) 25 repeat;
   color: var(--colorCurrent);
-  user-select: none;
-  border-radius: 4px;
+}
+
+.toggle-btn:hover {
+  background-image: var(--backgroundImgCurrent);
+  animation: moveBgDown 5s linear infinite alternate-reverse,
+    moveBgLeftRight 3s ease-in-out infinite alternate-reverse;
 }
 
 .middleSection {
   border-radius: 10px;
   padding: 25px;
   width: 70vw;
-  height: 100vh;
-  margin: -100px auto;
+  margin: auto;
   background-color: var(--BGColorCurrent);
+  scrollbar-width: none;
 }
 
 h1 {
@@ -90,6 +97,16 @@ h1 {
   display: flex;
   justify-content: center;
 }
+
+h2 {
+  font-size: var(--fontSizeSecondary);
+  color: var(--colorCurrent);
+  text-align: center;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
 p {
   font-size: var(--fontSizeTertiary);
 }
@@ -98,9 +115,9 @@ p {
   display: flex;
   justify-content: space-between;
   position: sticky;
-  overflow: hidden;
   z-index: 1000;
   top: 50%;
+  pointer-events: none;
 }
 
 .navbar a {
@@ -112,10 +129,13 @@ p {
   border-image: var(--backgroundImgCurrent) 25 repeat;
   margin: 10px 20px;
   padding: 5px;
+  pointer-events: auto;
 }
 
 .navbar a:hover {
   background-image: var(--backgroundImgCurrent);
+  animation: moveBgDown 5s linear infinite alternate-reverse,
+    moveBgLeftRight 3s ease-in-out infinite alternate-reverse;
 }
 
 .navbar-right {
@@ -129,9 +149,12 @@ p {
 
 .entry {
   border: 10px solid;
-  padding: 0px 10px;
-  margin: 50px 10px;
   border-image: var(--backgroundImgCurrent) 25 repeat;
+  display: flex;
+  margin: 10px 0px;
+  flex-direction: column;
+  text-align: center;
+  padding: 1vw;
 }
 
 /* MOBILE */
@@ -142,8 +165,16 @@ p {
   p {
     font-size: var(--fontSizeMobileTertiary);
   }
+  body {
+    margin: 20px 0px;
+  }
+
+  .page {
+    min-height: 100vh;
+  }
+
   .middleSection {
-    margin: 0px auto;
+    margin: 15vh auto 5vh;
   }
   .navbar {
     display: flex;
@@ -189,8 +220,12 @@ p {
   --backgroundImgCurrent: var(--backgroundImgChloe);
 }
 
+span {
+  justify-content: center;
+}
+
 .hilia {
-  display: inline;
+  display: flex;
 }
 .hichloe {
   display: none;
@@ -201,5 +236,25 @@ p {
 }
 
 #toggleTheme:checked ~ .page .middleSection .entry .hichloe {
-  display: inline;
+  display: flex;
+}
+
+#toggleTheme:checked
+  ~ .page
+  .middleSection
+  .musicEntryWrapper
+  .musicEntry
+  .entry
+  .hichloe {
+  display: none;
+}
+
+#toggleTheme:checked
+  ~ .page
+  .middleSection
+  .musicEntryWrapper
+  .musicEntry
+  .entry
+  .hilia {
+  display: none;
 }

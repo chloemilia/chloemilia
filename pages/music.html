@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>music</title>
+    <title>the space between</title>
     <link rel="stylesheet" href="../styles/styles.css" />
-    <link rel="icon" href="favicon.png" />
+    <link rel="stylesheet" href="../styles/music.css" />
+    <link rel="icon" href="../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     <input type="checkbox" id="toggleAnim" hidden />
     <input type="checkbox" id="toggleTheme" hidden />
+    <input type="checkbox" id="layoutSongs" hidden />
+    <input type="checkbox" id="layoutAlbums" hidden />
+    <input type="checkbox" id="layoutArtists" hidden />
 
     <div class="page">
       <div class="navbar">
@@ -29,9 +33,78 @@
           <label for="toggleTheme" class="toggle-btn">toggle theme</label>
         </div>
 
-        <h1>music</h1>
-        <div class="entry">
-          <p>WIP</p>
+        <div class="entry"><h1>music</h1></div>
+
+        <!-- https://github.com/JeffreyCA/lastfm-recently-played-readme this is so cool check this out-->
+        <div class="musicEntryWrapper">
+          <div class="entry">
+            <img
+              class="hilia"
+              src="https://lastfm-recently-played.vercel.app/api?user=emilialialialia&width=800&bg_color=700000&loved=true&show_user=always&header_style=compact_stats_only&maxage=60"
+            />
+            <img
+              class="hichloe"
+              src="https://lastfm-recently-played.vercel.app/api?user=emilialialialia&width=800&bg_color=599bff&loved=true&show_user=header&header_style=compact_stats_only&maxage=60"
+            />
+          </div>
+        </div>
+
+        <div class="musicEntryWrapper">
+          <div class="musicEntry">
+            <div class="entry musicEntry">
+              <div class="entry"><h2>songs</h2></div>
+              <label for="layoutSongs" class="toggle-btn">expand</label>
+              <div class="listSongs">
+                <p>grimes - delicate weapon</p>
+                <p>aviators - into the black</p>
+                <p>r missing - placecholder for the night</p>
+                <p>r missing - veronica pass</p>
+                <p>r missing - infinitifalls</p>
+                <p>anthony septim - solitude</p>
+                <p>drive alone - sustain/decay</p>
+                <p>r missing - darnkess, i'll always be your girl</p>
+                <p>health - major crimes</p>
+                <p>health - dead flowers</p>
+                <p>pearly drops - call for help</p>
+                <p>magdalena bay - chaeri</p>
+                <p>magdalena bay - you lose</p>
+                <p>magdalena bay - something for 2</p>
+                <p>magdalena bay - cry for me</p>
+                <p>omori - by your side</p>
+                <p>omori - omori</p>
+                <p>omori - alter</p>
+                <p>deadmau5 - quezacotl</p>
+                <p>deadmau5 - ghosts n' stuff</p>
+                <p>deadmau5 - strobe</p>
+                <p>deadmau5 - sofi needs a ladder</p>
+                <p>deadmau5 - some chords</p>
+                <p>how to destroy angels - a drowning</p>
+                <p></p>
+              </div>
+            </div>
+          </div>
+          <div class="musicEntry">
+            <div class="entry musicEntry">
+              <div class="entry"><h2>albums</h2></div>
+              <label for="layoutAlbums" class="toggle-btn">expand</label>
+              <div class="listAlbums">
+                <p>r missing - placecholder for the night</p>
+                <p>magdalena bay - mercurial world</p>
+                <p>magdalena bay - imaginal disk</p>
+              </div>
+            </div>
+          </div>
+          <div class="musicEntry">
+            <div class="entry musicEntry">
+              <div class="entry"><h2>artists</h2></div>
+              <label for="layoutArtists" class="toggle-btn">expand</label>
+              <div class="listArtists">
+                <p>R Missing</p>
+                <p>Magdalena Bay</p>
+                <p>$uicideboy$</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
