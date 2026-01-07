@@ -111,6 +111,12 @@ p {
   font-size: var(--fontSizeTertiary);
 }
 
+a,
+a:link,
+a:visited {
+  color: var(--colorCurrent);
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
